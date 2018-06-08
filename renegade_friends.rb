@@ -8,6 +8,8 @@ require_relative "lib/containers/header"
 require_relative "lib/containers/home"
 require_relative "lib/containers/about"
 
+LAUNCH_TIME = Time.now
+
 module RenegadeFriends
   class Window < CyberarmEngine::Engine
     attr_accessor :active_container
@@ -25,6 +27,10 @@ module RenegadeFriends
 
     def update
       super
+      unless @loaded
+        puts "Took: #{Time.now-LAUNCH_TIME} to open window."
+        @loaded = true
+      end
       self.caption = "Renegade Friends - #{@active_container.class.to_s.sub('RenegadeFriends::', '').sub('Container', '')}"
       @navigation_container.update
       @active_container.update
