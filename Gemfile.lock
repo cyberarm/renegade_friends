@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gamespy_query (0.1.5)
+    gosu (0.13.3)
+    old_gamespy_query (0.1.0)
+      gamespy_query
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  gosu (~> 0.13.3)
+  old_gamespy_query
+
+BUNDLED WITH
+   1.16.1

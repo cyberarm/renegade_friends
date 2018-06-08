@@ -3,7 +3,7 @@ module RenegadeFriends
     def setup
       set_layout_y(10, 20)
       text "Renegade Friends", 10, 10, 36, Gosu::Color::WHITE, :center
-      text "Bringing players together or something.", 10, 50, 18, Gosu::Color::WHITE, :center
+      text "Bringing players together or something.", 10, 40, 18, Gosu::Color::WHITE, :center
 
       button("Home", 10, 60) do
         $window.active_container = HomeContainer.new(0, 100, $window.width, $window.height)
@@ -13,7 +13,7 @@ module RenegadeFriends
         $window.active_container = AboutContainer.new(0, 100, $window.width, $window.height)
       end
       button("Servers", 150, 60)
-      button("Buddies/Friends", 220, 60)
+      button("Buddies/Friends", 240, 60)
     end
 
     def draw
