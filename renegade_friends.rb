@@ -4,13 +4,19 @@ rescue LoadError
   require_relative "../cyberarm_engine/lib/cyberarm_engine"
 end
 
+require_relative "lib/master_server/master_server"
+require_relative "lib/server_list/server_list"
+
 require_relative "lib/containers/header"
 require_relative "lib/containers/home"
 require_relative "lib/containers/about"
+require_relative "lib/containers/friends"
 
-LAUNCH_TIME = Time.now
+
 
 module RenegadeFriends
+  LAUNCH_TIME = Time.now
+  VALID_EXECUTABLES = ["game.exe", "game2.exe"]
   class Window < CyberarmEngine::Engine
     attr_accessor :active_container
     def setup
@@ -39,6 +45,10 @@ module RenegadeFriends
     def button_up(id)
       @navigation_container.button_up(id)
       @active_container.button_up(id)
+    end
+
+    def drop(filename)
+      puts filename
     end
   end
 end

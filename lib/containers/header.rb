@@ -12,8 +12,9 @@ module RenegadeFriends
       button("About", 80, 60) do
         $window.active_container = AboutContainer.new(0, 100, $window.width, $window.height)
       end
-      button("Servers", 150, 60)
-      button("Buddies/Friends", 240, 60)
+      button("Buddies/Friends", 150, 60) do
+        $window.active_container = FriendsContainer.new(0, 100, $window.width, $window.height)
+      end
     end
 
     def draw
